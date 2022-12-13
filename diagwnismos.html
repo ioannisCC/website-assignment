@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="weeknd.png">
+    <title>The Weeknd || Διαγωνισμός</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>  <!--εισαγει εικόνες απο μια online βιβλιοθήκη-->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="xo.png" alt="xo" id="xo"><br><br>
+      <ul>
+        <li><a href="arxikh.html">Αρχική</a></li>
+        <li><a href="diskografia.php">Δισκογραφία</a></li>
+        <li><a href="istoria.html">Ιστορία</a></li>
+        <li><a href="vraveia.html">Βραβεία</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="aksiologish.php">Αξιολόγηση Κομματιών</a></li>
+        <li><a href="#" class="active">Διαγωνισμός</a></li>
+        <li><a href="epikoinwnia.html">Επικοινωνία</a></li>
+      </ul>
+      <img src="xo.png" alt="xo" id="xo">
+    </header><br><br><br>
+    <div class="section2">
+      <div class="container">
+        <h2>Διαγωνισμός!!!</h2>
+      <div class="row100">
+        <div class="col">
+          <div class="inputBox">
+            <input type="text" id="plithos" name="plithos" required>
+            <span class="text">Πλήθος Συμμετεχόντων</span><br><br>
+            <span class="line"></span>
+          </div><br><br>
+        </div></div><br><br><br>
+    <div class="row100">
+      <div class="col">
+        <div class="center">
+    <button class="btn" onclick="GO()"><span>:)</span><span>Πάμε</span></button><br><br><br><br><br>
+      </div></div>
+    </div>
+    <div class="row100">
+      <div class="col">
+        <div class="center">
+    <button class="btn" onclick="PL()"><span>:)</span><span>Γεννημένοι το 2003</span></button><br><br><br>
+     </div>
+   </div>
+   </div>
+   <div class="row100">
+     <div class="col">
+       <div class="center">
+    <button class="btn" onclick="MAX()"><span>:)</span><span>Ψευδώνυμα νικητών</span> </button>
+     </div>
+   </div>
+    </div>
+    </div>
+    </div>
+    <div class="sec">
+    <div class="last">
+      <p><ul>
+        <li><a href="arxikh.html">Αρχική</a></li>
+        <li><a href="diskografia.php">Δισκογραφία</a></li>
+        <li><a href="istoria.html">Ιστορία</a></li>
+        <li><a href="vraveia.html">Βραβεία</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="aksiologish.php">Αξιολόγηση Κομματιών</a></li>
+        <li><a href="#" class="active">Διαγωνισμός</a></li>
+        <li><a href="epikoinwnia.html">Επικοινωνία</a></li>
+      </ul><br></p></div>
+        <p><br><br><br>
+        <div class="sm">
+          Βρείτε τον καλλιτέχνη<br><br>
+          <a href="https://www.facebook.com/theweeknd" target="_blank"><i class="fab fa-facebook-f"></i></a>  <!--με το i προσθέτω εικονα-->
+          <a href="https://www.instagram.com/theweeknd/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/theweeknd" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC0WP5P-ufpRfjbNrmOWwLBQ" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ" target="_blank"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+
+    <script>
+      let header = document.querySelector('header');
+
+      window.addEventListener('scroll',function starsflow() {
+        let value = window.scrollY;
+        header.style.top = value*0.5 + 'px';
+      })
+    </script>
+
+  </body>
+</html>

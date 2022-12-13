@@ -1,0 +1,948 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700,800,900&display=swap"); /*εισαγω γραμματοσειρα*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", sans-serif;
+  scroll-behavior: smooth; /*εξασφαλιζει οτι τα στοιχεια της σελιδας θα μετακινουνται με εναν ομαλο τροπο καθως ο χρηστης σκρολαρει στη σελιδα*/
+}
+
+body {
+  min-height: 100vh; /*vh = 1% του μεγεθους της προβολης που βλεπουμε*/
+  background: linear-gradient(#2b1055,#7597de);
+}
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 30px 100px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center; /*στοιχιζει τα στοιχεια με κενο μεταξυ τους*/
+  align-items: center;
+  text-align: center;
+  z-index: 10000; /*μεσω του z-index οριζεται ποια στοιχεια στην ιστοσελιδα θα φαινονται πανω απο αλλα καθως μεγαλυτερο z-index "υπερκαλυπτει" στοιχεια με μικροτερο*/
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 10px;
+}
+
+header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px; /*στρογγυλοποιει τις γωνιες του πλαισιου*/
+}
+
+header ul li a:hover, /*ενεργοποιειται μια λειτουργια καθως ο χρηστης περναει με τον κερσορα πανω απο το στοιχειο δηλαδη εμφανιζεται ενα λευκο πλαισιο γυρω απο τα κουμπια του μενου*/
+header ul li a.active {
+  background: #fff;
+  border-radius: 40px;
+  color: #2b1055;
+}
+
+header img#xo {
+  width: 100px;
+  height: 100px;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /*εξαφανιζει τα αντικειμενα οταν σκρολαρει ο χρηστης στο κειμενο ωστε να μην αλληλοκαλυφθουνε οριζοντας ενα νοητο πλαισιο το οποιο αν ξεπεραστει εξαφανιζονται τα αντικειμενα*/
+}
+
+section::before { /*μεσω του before αναφερεται στο ακριβως προηγουμενο στοιχειο που ειναι η διαχωριστικη γραμμη μεταξυ τοης ιεκονας και του κειμενου αφου προσπαθω να κανω λιγοτερο αισθητη τη διαφορα χρωματος μεταξυ εικονας και του πεδιου του κειμενου*/
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top,#1c0522,transparent);
+  z-index: 1000;
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section img#moon { /*με το # αναφερεται στο id δηλαδη sto img moon.png*/
+  mix-blend-mode: screen; /*καθοριζει πως θα ενσωματωθειτο περιεχομενο ενος στοιχειο με το περιεχομενο του background*/
+}
+#text {
+  position: absolute;
+  right: -1000px;
+  color: #fff;
+  white-space: nowrap; /*εμφανιζει τα κενα αλλα δεν συμπεριλαμβανει την αλλαγη γραμμης δηλαδη ενα κειμενο θα το εμφανισει σε μια συνεχομενη γραμμη*/
+  font-size: 10vw;
+  z-index: 9;
+  margin-bottom: 400px;
+}
+
+.content {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.content p {
+  font-size: 20px;
+  color: black;
+  line-height: 1.5em;
+}
+
+.content p::first-letter {
+  font-size: 300%;
+  color: #ffcc66;
+  font-family: Comfortaa;
+}
+
+.content h2 {
+  font-size: 4.5em;
+  color: #fff;
+  text-align: center;
+}
+
+.sec {
+  position: relative;
+  padding: 100px;
+  background: #1c0522;
+}
+
+.sec h2  {
+  font-size: 4.5em;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.sec p#p1 {
+  font-size: 2.5em;
+  color: #fff;
+  justify-content: center;
+  text-align: center;
+  word-spacing: 3px;
+  line-height: 1.5em;
+}
+
+.sec p#p1::first-letter {
+  font-size: 300%;
+  color: #ffcc66;
+  font-family: Comfortaa;
+}
+
+.last {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  padding: 30px 100px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.last ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.last ul li {
+  list-style: none;
+}
+
+.last ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.last ul li a:hover,
+.last ul li a.active {
+  background: #fff;
+  border-radius: 40px;
+  color: #2b1055;
+}
+
+.box {
+  width: 80%;
+  padding: 50px;
+  background: #f5f5dc;
+  margin: 20px 270px 50px 270px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 300px 1000px 0px 1100px;
+  font-size: 0.9em;
+  min-width: 500px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.content-table a {
+  color: #b3b3ff;
+  text-decoration: none;
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 40px 30px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+  color: black;
+}
+
+.content-table tbody tr:nth-of-type(even) a {
+  color: #9933ff;
+  text-decoration: none;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #8080ff;
+}
+
+.image {
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  width: 2000px;
+  height: 1500px;
+  padding: 10px;
+  border: 2px solid #8080ff;
+  margin: 270px;
+}
+
+.image2 {
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 400px;
+  padding: 10px;
+  border: 2px solid #8080ff;
+  margin: 0px 950px 70px 950px;
+}
+#kl#bbtm,#v1 {
+  height: 450px;
+}
+#t,#s,#child,#fs,#bh {
+  height: 600px;
+}
+#sg {
+  height: 750px;
+}
+#v1,#v3 {
+  margin-left: 100px;
+  margin-top: 70px;
+}
+#v2,#v4 {
+  margin: 70px 200px 100px 1200px;
+}
+
+.frame {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 5px solid #5200cc;
+  margin: 0px 520px 0px 520px;
+}
+
+.banner-area {
+  width: 100%;
+  height: 200em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(tour.png);
+  background-size: cover;
+}
+
+.sm {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.sm a {
+  display: inline-block;
+  font-size: 1.5em;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0px;
+  transition: .4s linear;
+  position: relative;
+}
+
+.sm a::before, .sm a::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: .4s linear;
+}
+
+.sm a:hover {
+  transform: scale(.8);
+}
+
+.sm a:hover::before {   /*πριν κανεις hover με το ποντικι πανω στα εικονίδια*/
+  border-left: 4px solid;
+  border-right: 4px solid;
+  transform: skewX(20deg); /*η συναρτηση skewX περιστρεφει την εικονα στον αξονα X διαγωνια κατα τις μοιρες που οριζουμε */
+}
+
+.sm a:hover::after {   /*αφου κανεις hover με το ποντικι πανω στα εικονίδια*/
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+  transform: skewX(-20deg);
+}
+
+.section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+}
+
+.section2::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transform: translate(-420px,-180px);
+}
+
+.section2::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  transform: translate(400px,180px);
+}
+
+.container {
+  position: relative;
+  z-index: 20000;
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+
+.container h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.container .row100 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.container .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
+}
+
+.container .row100 .col .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+
+.container .row100 .col .inputBox input,
+.container .row100 .col .inputBox textarea  {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+
+.container .row100 .col .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.container .row100 .col .inputBox input:focus + .text,
+.container .row100 .col .inputBox input:valid + .text,
+.container .row100 .col .inputBox textarea:focus + .text,
+.container .row100 .col .inputBox textarea:valid + .text {
+  top: -35px;
+  left: -10px;
+}
+
+.container .row100 .col .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.container .row100 .col .inputBox input:focus ~ .line,
+.container .row100 .col .inputBox input:valid ~ .line {
+  height: 100%;
+}
+
+.container .row100 .col .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+
+.container .row100 .col .inputBox textarea:focus ~ .line,
+.container .row100 .col .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+
+.container .row100 .col .inputBox input[type="submit"] {
+  border: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  outline: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .section2::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    transform: translate(-200px,-180px);
+  }
+}
+
+.button {
+  position: relative;
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  font-family: Comfortaa;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border-radius: 4px;
+  transition: ease-out 0.3s;
+  background-color: #8080ff;
+  box-shadow: inset 0 0 0 0 #8080ff;
+}
+
+.button:hover {
+  box-shadow: inset 100 0 0 0 #8080ff;
+}
+
+.section2 a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #2196f3;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2 a:hover {
+  color: #fff;
+  background: #3939ac;
+  box-shadow: 0 0 4px #3939ac, 0 0 42px #3939ac, 0 0 65px #3939ac;
+  transition-delay: 1s;
+}
+
+.section2 a span {
+  position: absolute;
+  display: block;
+}
+
+.section2 a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#3939ac);
+}
+
+.section2 a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.section2 a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#3939ac);
+}
+
+.section2 a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.section2 a span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#3939ac);
+}
+
+.section2 a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+.section2 a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#3939ac);
+}
+
+.section2 a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+.section2 button {
+  outline: none;
+  decoration: none;
+}
+
+.checked {  /*χρωμα αστεριων στους δισκους*/
+  color: gold;
+}
+
+.center
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+.btn
+{
+	width: 200px;
+	height: 50px;
+	color: white;
+	border-radius: 5px;
+	font-family: Comfortaa;
+	font-weight: bold;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	line-height: 52px;
+	perspective: 230px;
+	box-shadow: inset 2px 2px 2px 0px #9933ff,7px 7px 20px 0px #8080ff,4px 4px 5px 0px #f3f3f3;
+}
+
+.btn span {
+	background: #9933ff;
+	background: liner-gradient(180deg,#9933ff 0%, #9933ff 100%);
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 50px;
+	left: 0;
+	top: 0;
+	border-radius: 5px;
+	text-align: center;
+	box-sizing: border-box;
+	transition: all .3s;
+	box-shadow: inset 2px 2px 2px 0px #9933ff,7px 7px 20px 0px #8080ff,4px 4px 5px 0px #f3f3f3;
+}
+
+.btn span:nth-child(2) {
+	transform: rotatex(0deg);
+  transform-origin: 50% 48% -26.7px;
+}
+
+.btn:hover span:nth-child(1) {
+	transform: rotatex(0deg);
+  box-shadow: inset 2px 2px 2px 0px #9933ff, 7px 7px 20px 0px #8080ff 4px 4px 5px 0px #f3f3f3;
+}
+
+.btn:hover span:nth-child(2) {
+	transform: rotatex(-90deg);
+	color: transparent;
+	box-shadow: inset 2px 2px 2px 0px #9933ff, 7px 7px 20px 0px #8080ff 4px 4px 5px 0px #f3f3f3;
+}
+
+.banner-area2 {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(animated.png);
+  background-size: cover;
+}
+
+.content-area2 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content2 {
+  text-align: center;
+}
+
+.content2 h1 {
+  font-size: 80px;
+  color: #fff;
+}
+
+.content2 p {
+  font-size: 30px;
+  color: #ddd;
+}
+
+.content2 .btn2 {
+  border: none;
+  outline: none;
+  padding: 15px;
+  margin-top: 100px;
+  border-radius: 4px;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.container2 {
+  width: 70%;
+  margin: 50px auto;
+  padding: 10px;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+.container2 .box2 {
+  width: 100%;
+  padding: 50px;
+  background: #f5f5dc;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1)
+}
+
+.content2 .btn2 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container2 .box2 legend {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.container2 .box2 legend textarea {
+  margin: 200px;
+}
+
+.container2 .box2 p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 .box2 input[type="number"] {
+  display: flex;
+  height: 50px;
+  width: 100px;
+  margin-left: 780px;
+  font-size: 2em;
+  font-family: Comfortaa;
+  border-radius: 20px;
+  outline-color: #b366ff;
+  box-shadow: 20px 0px 20px 0px #b366ff;
+}
+
+.container2 .box2 input[type="time"] {
+  display: flex;
+  height: 50px;
+  width: 250px;
+  margin-left: 700px;
+  font-size: 2em;
+  font-family: Comfortaa;
+  border-radius: 20px;
+  outline-color: #b366ff;
+  box-shadow: 20px 0px 20px 0px #b366ff;
+}
+
+.container2 .box2 input[type="date"] {
+  display: flex;
+  height: 50px;
+  width: 300px;
+  margin-left: 680px;
+  font-size: 2em;
+  font-family: Comfortaa;
+  border-radius: 20px;
+  outline-color: #b366ff;
+  box-shadow: 20px 0px 20px 0px #b366ff;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0!important;
+  background: #b366ff;
+  background-image: none;
+  flex: 1;
+  padding-left: 0.5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: Comfortaa;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: flex;
+  width: 25em;
+  height: 3em;
+  line-height: 3;
+  background: #f5f5dc;
+  overflow: hidden;
+  border-radius: .25em;
+  justify-content: center;
+  text-align: center;
+  margin: 50px 200px 0 600px;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #fff;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25 all ease;
+}
+
+.select:hover::after {
+  color: #000;
+}
+
+.radio {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.radio input[type="radio"] {
+  display: none;
+}
+
+.radio span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 3px solid #b366ff;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.radio span::after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #b366ff;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%,50%) scale(0);
+  border-radius: 50%;
+  transition: 200ms ease-in-out 0s;
+}
+
+.radio input[type="radio"]:checked ~ span:after {
+  transform: translate(-50%,50%) scale(1);
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    margin: 0px 500px 50px 720px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:40px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
