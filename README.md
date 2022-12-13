@@ -7,3 +7,4 @@ The site is presenting an music artist (The Weeknd) using html, css, javascript,
 An issue it has is that of responsivness as it works fine on big screens only (>27inch) due to the short period given to make it (10 days)
 
 note: A part of the site is in Greek as I stdy in Greece.
+Also images might be copyrighted but they are used for educational and personal reasons only.
