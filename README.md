@@ -6,6 +6,8 @@ One issue the website has is with responsiveness. It works fine on larger screen
 
 Note: Parts of the website are in Greek as I am studying in Greece. Additionally, some images may be copyrighted, but they are only used for educational and personal reasons. Finally, the contest is for a specific show, which should be specified.
 
+Below are videos showcasing the site.
+
 
 
 https://user-images.githubusercontent.com/98465741/230946025-7fd12793-fae4-4d4c-bd30-c1f65a973c07.mp4
